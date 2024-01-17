@@ -16,4 +16,9 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
+
+  public static class NeoMotorConstants {
+    public static final double POS_CONVERSION_FACTOR = 0; //NEED TO CALCULATE
+    public static final double VEL_CONVERSION_FACTOR = 0; //NEED TO CALCULATE
+  }
 }
