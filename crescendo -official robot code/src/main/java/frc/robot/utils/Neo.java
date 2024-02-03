@@ -63,9 +63,14 @@ public class Neo {
         pidController.setReference(target, gControlType);
     }
 
-    public static void follow(){
+    public void follow(){
 
     }
 
-    
+    public SparkLimitSwitch getForwardLimitSwitch(SparkLimitSwitch.Type switchType){
+        
+    }
+    public SparkLimitSwitch getReverseLimitSwitch(SparkLimitSwitch.Type switchType){
+
+    }
 }
