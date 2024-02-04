@@ -19,4 +19,11 @@ public final class Constants {
   public static class MotorConstants{
     public static final int NEO_MOTOR_COUNTS_PER_REV = 42;
   }
+  public static class ClimbingSubSysConstants{
+    public static final int LEFT_MOTOR_ID = 0;
+    public static final int RIGHT_MOTOR_ID = 0;
+
+    public static final int RIGHT_CLIMBING_LIMIT_SWITCH_CHANNEL = 0;
+    public static final int LEFT_CLIMBING_LIMIT_SWITCH_CHANNER = 1;
+  }
 }
