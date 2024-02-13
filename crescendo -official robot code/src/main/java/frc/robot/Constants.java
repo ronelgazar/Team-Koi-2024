@@ -4,14 +4,16 @@
 
 package frc.robot;
 
-import javax.management.RuntimeErrorException;
-
 /**
- * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
- * constants. This class should not be used for any other purpose. All constants should be declared
+ * The Constants class provides a convenient place for teams to hold robot-wide
+ * numerical or boolean
+ * constants. This class should not be used for any other purpose. All constants
+ * should be declared
  * globally (i.e. public static). Do not put anything functional in this class.
  *
- * <p>It is advised to statically import this class (or one of its inner classes) wherever the
+ * <p>
+ * It is advised to statically import this class (or one of its inner classes)
+ * wherever the
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
@@ -24,7 +26,7 @@ public final class Constants {
     public static final double INCHES_TO_METERS = 0.0254;
 
     public static final double METERS_TO_INCHES = 1 / INCHES_TO_METERS;
-    
+
     public static final double RADIANS_TO_DEGREES = 57.2957795;
 
     public static final double DEGREES_TO_RADIANS = 1 / RADIANS_TO_DEGREES;
@@ -37,6 +39,10 @@ public final class Constants {
   public static class MotorAttributes {
     public static class Neo {
       public static final double COUNTS_PER_REVOLUTION_SparkMax = 42;
+      public static final double GEAR_RATIO = GearRatio.SwerveModule.STEERING_GEAR_RATIO;
+      public static final double CONVERSION_FACTOR = GEAR_RATIO / COUNTS_PER_REVOLUTION_SparkMax;
+      public static final double MAX_OUTPUT_ENCODER = 10000; //rpm
+      public static final double MIN_OUTPUT_ENCODER = 0; //rpm
     }
 
     public static class Vortex {
@@ -87,31 +93,11 @@ public final class Constants {
     }
   }
 
-  public record PIDConstants(double P, double I, double D, double FF, double IZone) {
-    public PIDConstants {
-        if(P < -1 || P > 1) throw new RuntimeErrorException(new Error("invalid P value (-1 >= p >= 1)"));
-        if(I < -1 || I > 1) throw new RuntimeErrorException(new Error("invalid P value (-1 >= I >= 1)"));
-        if(D < -1 || D > 1) throw new RuntimeErrorException(new Error("invalid P value (-1 >= p >= 1)"));
-    }
-
-    public double getP() {
-        return P;
-    }
-
-    public double getI() {
-        return I;
-    }
-
-    public double getD() {
-        return D;
-    }
-
-    public double getFF() {
-        return FF;
-    }
-
-    public double getIZone() {
-        return IZone;
-    }
-}
+  public class PIDConstants {
+    public static final double P = 0;
+    public static final double I = 0;
+    public static final double D = 0;
+    public static final double FF = 0;
+    public static final double IZONE = 0;
+  }
 }
