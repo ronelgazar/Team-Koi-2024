@@ -13,11 +13,11 @@ public class ShootingSubSystem {
 
     public ShootingSubSystem(){
 
-        shootingMotorFront = new SparkFlexMotor(Constants.ShooterMotorConstants.kShootingMotorRightPort);
-        shootingMotorBack = new SparkFlexMotor(Constants.ShooterMotorConstants.kShootingMotorLeftPort);
+        shootingMotorFront = new SparkFlexMotor(Constants.ShooterMotorPortConstants.kShootingMotorFrontPort);
+        shootingMotorBack = new SparkFlexMotor(Constants.ShooterMotorPortConstants.kShootingMotorBackPort);
         shootingMotorBack.follow(shootingMotorFront);
-        aimingMotor = new SparkMaxMotor(Constants.ShooterMotorConstants.kAimingMotorPort);
-        deliveryToShootingMotor = new BrushedMotor(Constants.ShooterMotorConstants.kShootingMotorRightPort);
+        aimingMotor = new SparkMaxMotor(Constants.ShooterMotorPortConstants.kAimingMotorPort);
+        deliveryToShootingMotor = new BrushedMotor(Constants.ShooterMotorPortConstants.DeliveryToShootingMotorPort);
 
     }
     public void setShootersVelocity (double Velocity){
