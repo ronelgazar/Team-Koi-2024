@@ -105,8 +105,20 @@ public class IntakeSubsystem extends SubsystemBase {
         // I didn't want the intake gears spinning around
     }
 
+    public void input(int time) {
+        turnOn(0.5);
+        try {
+            TimeUnit.SECONDS.sleep(time);
+        } catch (InterruptedException e) {}
+        turnOff();
+    }
+
     public void turnOn(double speed) {
         motor.set(speed);
+    }
+
+    public void set(double speed) {
+        turnOn(speed);
     }
 
     public void turnOff() {
