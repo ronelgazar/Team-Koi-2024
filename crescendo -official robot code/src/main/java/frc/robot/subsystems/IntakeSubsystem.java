@@ -33,7 +33,7 @@ public class IntakeSubsystem extends SubsystemBase {
          */
     }
 
-    public  SparkPIDController getPidController() {
+    public SparkPIDController getPidController() {
         return pidController;
     }
 
@@ -49,15 +49,16 @@ public class IntakeSubsystem extends SubsystemBase {
         return motor; // ????? how is the motor the controller
     }
 
-    // public void setPidConstants(){
-    // encoder.setPositionConversionFactor(Constants.MotorAttributes.Neo.CONVERSION_FACTOR);
-    // pidController.setP(Constants.PIDConstants.P);
-    // pidController.setI(Constants.PIDConstants.I);
-    // pidController.setD(Constants.PIDConstants.D);
-    // pidController.setIZone(Constants.PIDConstants.IZONE);
-    // pidController.setFF(Constants.PIDConstants.FF);
-    // pidController.setOutputRange(Constants.MotorAttributes.Neo.MIN_OUTPUT_ENCODER,
-    // Constants.MotorAttributes.Neo.MAX_OUTPUT_ENCODER);
+    public void setPidConstants() {
+        encoder.setPositionConversionFactor(Constants.MotorAttributes.Neo.CONVERSION_FACTOR);
+        pidController.setP(Constants.PIDConstants.P);
+        pidController.setI(Constants.PIDConstants.I);
+        pidController.setD(Constants.PIDConstants.D);
+        pidController.setIZone(Constants.PIDConstants.IZONE);
+        pidController.setFF(Constants.PIDConstants.FF);
+        pidController.setOutputRange(Constants.MotorAttributes.Neo.MIN_OUTPUT_ENCODER,
+                Constants.MotorAttributes.Neo.MAX_OUTPUT_ENCODER);
+    }
     // SmartDashboard.putNumber("P Gain", Constants.PIDConstants.P);
     // SmartDashboard.putNumber("I Gain", Constants.PIDConstants.I);
     // SmartDashboard.putNumber("D Gain", Constants.PIDConstants.D);
@@ -90,7 +91,7 @@ public class IntakeSubsystem extends SubsystemBase {
 
     public void input() {
         motor.set(0.5); // according to docs, -1 < speed < 1 so i put it at -0.5 to turn on the motors
-                         // for intake to not make them spin too fast
+                        // for intake to not make them spin too fast
         try {
             TimeUnit.SECONDS.sleep(3); // i thought 3 seconds would be enough to get the disc in
         } catch (InterruptedException e) {
@@ -113,17 +114,19 @@ public class IntakeSubsystem extends SubsystemBase {
     }
 
     public void stop() {
-        //motor.stopMotor();
+        // motor.stopMotor();
         motor.set(0);
     }
 
     public void setSetPoint(double setPoint) {
         encoder.setPosition(0);
         pidController.setReference(setPoint, ControlType.kPosition);
-    } //someone needs to explain this to me
+    } // someone needs to explain this to me
 
     public void setIdleMode(IdleMode mode) {
-        motor.setIdleMode(mode == IdleMode.kBrake ? IdleMode.kBrake : IdleMode.kCoast); //the if is there for if the user inputs something that is not break or coast (somehow)
+        motor.setIdleMode(mode == IdleMode.kBrake ? IdleMode.kBrake : IdleMode.kCoast); // the if is there for if the
+                                                                                        // user inputs something that is
+                                                                                        // not break or coast (somehow)
     }
 
     public void brake() {
@@ -136,7 +139,10 @@ public class IntakeSubsystem extends SubsystemBase {
         motor.set(0);
         motor.setIdleMode(IdleMode.kCoast);
     }
-    
-    public void periodic() {}
-    public void simulationPeriodic() {}
+
+    public void periodic() {
+    }
+
+    public void simulationPeriodic() {
+    }
 }
