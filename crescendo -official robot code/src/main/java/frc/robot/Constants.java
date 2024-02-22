@@ -21,4 +21,16 @@ public final class Constants {
     public static final double POS_CONVERSION_FACTOR = 0; //NEED TO CALCULATE
     public static final double VEL_CONVERSION_FACTOR = 0; //NEED TO CALCULATE
   }
+
+  public static class ShooterMotorPortConstants {
+    public static final int kShootingMotorFrontPort = 1;
+    public static final int kShootingMotorBackPort = 2;
+    public static final int kAimingMotorPort = 3;
+    public static final int DeliveryToShootingMotorPort = 4;
+  }
+  public static class DeliveryMotorPortConstants {
+    public static final int kDeliveryMotorRightPort = 5;
+    public static final int kDeliveryMotorLeftPort = 6;
+
+  }
 }
