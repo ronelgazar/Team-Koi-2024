@@ -68,9 +68,11 @@ public class Neo {
     }
 
     public SparkLimitSwitch getForwardLimitSwitch(SparkLimitSwitch.Type switchType){
+        return null;
         
     }
     public SparkLimitSwitch getReverseLimitSwitch(SparkLimitSwitch.Type switchType){
+        return null;
 
     }
 }
