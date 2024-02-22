@@ -1,12 +1,15 @@
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.utiils.BrushedMotor;
 import frc.robot.utiils.SparkFlexMotor;
 import frc.robot.utiils.SparkMaxMotor;
-
-public class ShootingSubSystem {
-    private SparkFlexMotor shootingMotorFront;
+public class ShootingSubSystem extends SubsystemBase {
+  /** Creates a new ExampleSubsystem. */
+  
+   private SparkFlexMotor shootingMotorFront;
     private SparkFlexMotor shootingMotorBack;
     private SparkMaxMotor aimingMotor;
     private BrushedMotor deliveryToShootingMotor;
@@ -30,4 +33,5 @@ public class ShootingSubSystem {
     public void setDeliveryVelocity (double Velocity){
         deliveryToShootingMotor.set(Velocity);
     }
+
 }
