@@ -37,8 +37,50 @@ public class ShootingSubSystem extends SubsystemBase {
         deliveryToShootingMotor.set(Velocity);
     }
 
-    public void setShooterIdleMode(IdleMode mode) {
-        shootingMotorFront.setIdleMode(mode == IdleMode.kBrake ? IdleMode.kBrake : IdleMode.kCoast);
+    public void setShootersIdleMode(IdleMode mode) {
+        if(mode != IdleMode.kBrake) mode = IdleMode.kCoast;
+        shootingMotorFront.setIdleMode(mode);
+        shootingMotorBack.setIdleMode(mode);
+    }
+    public void setAimerIdleMode(IdleMode mode) {
+        if(mode != IdleMode.kBrake) mode = IdleMode.kCoast;
+        aimingMotor.setIdleMode(mode);
     }
 
+    public void setDeliveryIdleMode(IdleMode mode) {
+        if(mode != IdleMode.kBrake) mode = IdleMode.kCoast;
+        shootingMotorFront.setIdleMode(mode);
+    }
+
+    public void brakeShooters() {
+        setShootersIdleMode(IdleMode.kBrake);
+        shootingMotorBack.set(0);
+        shootingMotorFront.set(0);
+    }
+
+    public void brakeAimer() {
+        setAimerIdleMode(IdleMode.kBrake);
+        aimingMotor.set(0);
+    }
+
+    public void brakeDelivery() {
+        setDeliveryIdleMode(IdleMode.kBrake);
+        deliveryToShootingMotor.set(0);
+    }
+
+    public void coastShooters() {
+        setShootersIdleMode(IdleMode.kCoast);
+        shootingMotorBack.set(0);
+        shootingMotorFront.set(0);
+    }
+
+    public void coastAimer() {
+        setAimerIdleMode(IdleMode.kCoast);
+        aimingMotor.set(0);
+    }
+
+    public void coastDelivery() {
+        setDeliveryIdleMode(IdleMode.kCoast);
+        deliveryToShootingMotor.set(0);
+    }
 }
