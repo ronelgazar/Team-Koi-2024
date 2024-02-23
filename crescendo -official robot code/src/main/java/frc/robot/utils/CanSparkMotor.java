@@ -1,7 +1,10 @@
-package frc.robot.utiils;
+package frc.robot.utils;
 
 import com.revrobotics.*;
 import com.revrobotics.CANSparkBase.ControlType;
+import com.revrobotics.CANSparkBase.IdleMode;
+
+import frc.robot.Constants.PIDConstants;
 
 
 public abstract class CanSparkMotor {
@@ -29,11 +32,11 @@ public abstract class CanSparkMotor {
     }
 
     public void setPIDConstants(PIDConstants pidConstants) {
-        pidController.setP(pidConstants.kP());
-        pidController.setI(pidConstants.kI());
-        pidController.setD(pidConstants.kD());
-        pidController.setFF(pidConstants.kF());
-        pidController.setIZone(pidConstants.kIZ());
+        pidController.setP(pidConstants.P);
+        pidController.setI(pidConstants.I);
+        pidController.setD(pidConstants.D);
+        pidController.setFF(pidConstants.FF);
+        pidController.setIZone(pidConstants.IZONE);
 
     }
 
@@ -49,6 +52,10 @@ public abstract class CanSparkMotor {
 
     public void setFeedbackDevice(AbsoluteEncoder encoder) {
         pidController.setFeedbackDevice(encoder);
+    }
+
+    public void setIdleMode(IdleMode mode) {
+        motorController.setIdleMode(mode);
     }
 
 }

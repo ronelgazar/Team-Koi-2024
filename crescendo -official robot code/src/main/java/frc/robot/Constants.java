@@ -65,6 +65,7 @@ public final class Constants {
         public static final int SHOOTER_MOTOR_1 = 0;
         public static final int SHOOTER_MOTOR_2 = 0;
         public static final int FEED_MOTOR = 0;
+        public static final int AIMING_MOTOR = 0;
       }
 
       public static class Drive {
@@ -89,6 +90,10 @@ public final class Constants {
             public static final int DRIVE_MOTOR = 0;
           }
         }
+      }
+      public static class Delivery {
+        public static final int MOTOR1 = 0;
+        public static final int MOTOR2 = 0;
       }
     }
   }
