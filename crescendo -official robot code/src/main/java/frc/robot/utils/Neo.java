@@ -1,6 +1,7 @@
 package frc.robot.utils;
 
 import com.revrobotics.AbsoluteEncoder;
+import com.revrobotics.CANSparkBase;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.RelativeEncoder;
 import com.revrobotics.SparkPIDController;
@@ -63,14 +64,24 @@ public class Neo {
         pidController.setReference(target, gControlType);
     }
 
-    public void follow(){
+    public void follow(CANSparkBase leader){
+            motorController.follow(leader);
+    }
 
+    public void setInverted(boolean inverted){
+        motorController.setInverted(inverted);
+    }
+
+    public CANSparkBase getMotorController(){
+        return motorController;
     }
 
     public SparkLimitSwitch getForwardLimitSwitch(SparkLimitSwitch.Type switchType){
+        return null;
         
     }
     public SparkLimitSwitch getReverseLimitSwitch(SparkLimitSwitch.Type switchType){
+        return null;
 
     }
 }

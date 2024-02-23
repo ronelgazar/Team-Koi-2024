@@ -1,5 +1,5 @@
 package frc.robot.subsystems;
-import frc.robot.utiils.SparkMaxMotor;
+import frc.robot.utils.SparkMaxMotor;
 import frc.robot.Constants;
 
 public class DeliverySubSystem {

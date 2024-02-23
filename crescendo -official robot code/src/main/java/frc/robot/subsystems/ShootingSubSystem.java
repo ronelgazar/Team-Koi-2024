@@ -1,11 +1,10 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-import frc.robot.utiils.BrushedMotor;
-import frc.robot.utiils.SparkFlexMotor;
-import frc.robot.utiils.SparkMaxMotor;
+import frc.robot.utils.BrushedMotor;
+import frc.robot.utils.SparkFlexMotor;
+import frc.robot.utils.SparkMaxMotor;
 public class ShootingSubSystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   
@@ -27,9 +26,12 @@ public class ShootingSubSystem extends SubsystemBase {
 
         shootingMotorFront.set(Velocity);
     }
+    // Legit no idea how that's supposed to work, it's going to stay here incase the one who wrote this explains what the hell it's doing here.
     public void setAimPosition (double Position){
         aimingMotor.set(Position);
     }
+
+    //The small wheels that deliver to the shooting system.
     public void setDeliveryVelocity (double Velocity){
         deliveryToShootingMotor.set(Velocity);
     }
