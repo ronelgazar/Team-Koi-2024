@@ -10,5 +10,5 @@ public class SparkFlexMotor extends CanSparkMotor {
         super(new CANSparkFlex(canID, MotorType.kBrushless));
     }
 
-    
+   
 }

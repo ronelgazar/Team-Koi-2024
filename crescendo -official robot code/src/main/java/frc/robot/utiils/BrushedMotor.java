@@ -1,9 +1,7 @@
 package frc.robot.utiils;
 
 import com.revrobotics.CANSparkMax;
-
 import frc.robot.utils.CanSparkMotor;
-
 import com.revrobotics.CANSparkLowLevel;
 
 public class BrushedMotor extends CanSparkMotor {
