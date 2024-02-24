@@ -5,6 +5,7 @@ import com.revrobotics.RelativeEncoder;
 import com.revrobotics.SparkPIDController;
 import com.revrobotics.CANSparkBase.ControlType;
 import com.revrobotics.CANSparkLowLevel.MotorType;
+import frc.robot.Constants.PIDConstants;
 
 public class PIDMotorController {
     private RelativeEncoder encoder;
@@ -43,7 +44,7 @@ public class PIDMotorController {
         encoder.setVelocityConversionFactor(factor);
     }
 
-    public void setPIDConstants(PIDConstantsTempName pid) {
+    public void setPIDConstants(PIDConstants pid) {
         pidController.setP(pid.getP());
         pidController.setI(pid.getI());
         pidController.setD(pid.getD());
